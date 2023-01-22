@@ -1,8 +1,23 @@
 import React from "react";
-import { directors } from "../data";
+import { movies } from "../data";
 
-function Directors() {
-  return <div>{/*{code here}*/}</div>;
+function Movies() {
+
+  return (
+    <div>
+      <h1>Movies Page</h1>
+        {movies.map((movie, index) =>
+          <div className="movie" key={index}>
+            <h2>{movie.title}</h2>
+            <h3>{movie.time}</h3>
+            <ul>{movie.genres.map((genre, index) => 
+              <li key={'genre_'+index}>{genre}</li>
+                )}
+            </ul>
+          </div>
+        )}
+    </div>
+  )
 }
 
-export default Directors;
+export default Movies;
